@@ -1,0 +1,22 @@
+name: My CI
+
+on: 
+    push:
+        branches: [main]
+
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: My first step
+            run: echo "Hello World"
+
+test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+        - name: Install Python Package
+          run: pip install .[test]
+        - name: Ru tests
+          run: pytest -vv
+          
